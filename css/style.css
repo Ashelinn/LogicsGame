@@ -1,4 +1,173 @@
-/*canvas {
-    width: 366px;
-    height: 786px;
-}*/
+.board {
+    width: 550px;
+    height: 775px;
+    background: url('../img/board.png'), no-repeat;
+}
+
+.wrap {
+    width: 212px;
+    height: 100%;
+    margin-left: 32px;
+    position: relative;
+}
+
+.wrap-prompt {
+    width: 130px;
+    height: 100%;
+    margin-left: 24px;
+    position: relative;
+}
+
+.flex-wrap {
+    display: flex;
+    height: 100%;
+}
+
+.line-flex {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.hidden {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+/*Стили кнопок*/
+#start {
+    width: 50%;
+    height: 60px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: rgb(255, 136, 0);
+    border: none;
+    outline: none;
+    transition: background-color 0.5 ease;
+}
+
+#stop {
+    width: 50%;
+    height: 60px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: rgb(56, 155, 61);
+    border: none;
+    outline: none;
+    transition: background-color 0.5 ease;
+}
+
+#stop:hover {
+    background-color: rgb(33, 112, 37);
+}
+
+#start:hover {
+    background-color: rgb(252, 114, 2);
+}
+
+
+.button-wrap{
+    width: 80px;
+    margin-left: 45px;
+    position: relative;
+}
+
+.done {
+    padding: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background-color: rgb(127, 202, 5);
+    transition: background-color 0.5 ease;
+}
+
+.done:hover {
+    background-color: rgb(110, 175, 6);
+}
+
+.gameover {
+    font-weight: bold;
+    cursor: pointer;
+    background-color: rgb(245, 65, 59);
+    transition: background-color 0.5 ease;
+}
+
+.gameover:hover {
+    background-color: rgb(245, 22, 14);
+}
+
+/*Стили для цветных кружков*/
+.red {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: tomato;
+    cursor: pointer;
+}
+
+.orange {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #FF8C00;
+    cursor: pointer;
+}
+
+.blue {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #00BFFF;
+    cursor: pointer;
+}
+
+.green {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #6B8E23;
+    cursor: pointer;
+}
+
+.violet {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #7B68EE;
+    cursor: pointer;
+}
+
+.pink {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #FF69B4;
+    cursor: pointer;
+}
+
+.yellow {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #FFD700;
+    cursor: pointer;
+}
+
+/*Стили для линий цветов*/
+#hidden-colors {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 36px;
+}
+
+#line-one, #button-one {
+    position: absolute;
+    left: 0;
+    bottom: 64px;
+}

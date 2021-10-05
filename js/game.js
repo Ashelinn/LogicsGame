@@ -1,78 +1,106 @@
-let game = {
-    width: 500,
-    height: 850,
-    ctx: undefined,
-    agree: undefined,
-    sprites: {
-        board: undefined,
-        violet: undefined,
-        pink: undefined,
-        orange: undefined,
-        blue: undefined,
-        green: undefined,
-        red: undefined,
-        smal_braun: undefined,
-        smal_white: undefined,
-        agree: undefined
-    },
-    
-    //Инициализация
-    init: function() {
-        let canvas = document.getElementById("mycanvas");
-        this.ctx = canvas.getContext("2d");
-    },
-    
-    //загружаем картинки
-    load: function() {
-        for (let key in this.sprites) {
-            this.sprites[key] = new Image();
-            this.sprites[key].src = "img/"+key+".png";
-        }
-    },
+//Функция генерации последовательности цветов
+function createColor() {
+    let allcolors = ['blue', 'green', 'orange', 'pink', 'red', 'violet', 'yellow'];
 
-    //функция начала игры
-    start: function() {
-        this.init();
-        this.load();
-        this.run();
-    },
+    let hiddenColor = [];
 
-    //отрисовка спрайтов
-    render: function() {
-        //очищаем предыдущий кадр
-        this.ctx.clearRect(0, 0, this.width, this.height);
+    for (let i=0; i<4; i++) {
+        let index = Math.floor(Math.random()*allcolors.length);
+        hiddenColor[i]  = allcolors[index];
+        allcolors.splice(index,1);
+    }
 
-        //рисуем новый кадр
-        this.ctx.drawImage(this.sprites.board, 0, 0, 458, 843);
+    return hiddenColor;
+}
 
-        this.ctx.drawImage(this.sprites.violet, 204, 690, 42, 42);
-
-        this.ctx.drawImage(this.sprites.pink, 254, 690, 42, 42);
-
-        this.ctx.drawImage(this.sprites.blue, 304, 690, 42, 42);
-
-        this.ctx.drawImage(this.sprites.orange, 354, 690, 42, 42);
-
-        this.ctx.drawImage(this.sprites.agree, 176, 780, 247, 41);
-    },
-
-    run: function(){
-        this.render();
-        //выводим картинки на экран
-        window.requestAnimationFrame(function(){
-            game.run();
+//Функция старта игры
+function startGame() {
+    //очистить поле для новой игры
+    let allTags = document.querySelectorAll('.red, .orange, .yellow, .green, .blue, .violet, .pink');
+        allTags.forEach(element => {
+            element.remove();
         });
-    },
-};
+    let allButtons = document.querySelectorAll('#one, #two, #three, #four, #five, #six, #seven, #eight, #nine, #ten');
+        allButtons.forEach(element => {
+            element.remove();
+        });
 
-//логика работы цветной фишки
-    
-//логика работы кнопки Подтвердить
-    game.agree = {
-        
+    //Генерируем последовательность цветов            
+    window.colors = {
+        mass: createColor()
     };
 
-// запуск после загрузки страницы
-window.addEventListener('load', function(){
-    game.start();
-});
+    //Выводим на первую линию произвольные цвета
+    let line = createColor();
+    console.log('1- '+line);
+    console.log('zagadano: '+colors.mass);
+    let tag = document.getElementById('line-one');
+
+    for (let i=3; i>=0; i--) {
+       tag.insertAdjacentHTML('afterbegin',`<button class="${line[i]}"> </button>`);
+    }
+
+    //добавляем кнопку подтверждения
+    let button_one = document.getElementById('button-one');
+    button_one.insertAdjacentHTML('afterbegin',`<button id="one" class="done"> Отправить </button>`);
+    
+    //скрыть кнопку старт
+    document.getElementById('start').setAttribute("disabled", "disabled");
+
+
+    //Нажатие на кнопку Отправить
+    let bdone = document.getElementById('one');
+    bdone.addEventListener('click', Done(line));
+}
+
+//Конец игры (кнопка сдаться)
+function stopGame() {
+    //Выводим загаданные цвета
+    let tag = document.getElementById('hidden-colors');
+
+    for (let i=3; i>=0; i--) {
+       tag.insertAdjacentHTML('afterbegin',`<button class="${colors.mass[i]}"> </button>`);
+    }
+    
+    //открыть кнопку старт
+    document.getElementById('start').removeAttribute("disabled");
+}
+
+//Функция проверки правильности отгадываемой последоватеьности
+function Done(mas) {
+    //все кнопки линии становятся неактивными
+    let tags = document.querySelectorAll(`#line-one > button`);
+        tags.forEach(element => {
+            element.setAttribute("disabled", "disabled");
+        });
+
+    let button = document.querySelector(`#button-one > button`);
+        button.setAttribute("disabled", "disabled");
+        
+    //Определяем сколько цветов угадано и сколько их на своих местах
+        let rightColors = 0;
+        let rightPlace = 0;
+
+        for (let i=0; i<4; i++) {
+            for (let j=0; j<4; j++) {
+                if (mas[i] == colors.mass[j]) {
+                    rightColors++;
+                    if (i == j) {
+                        rightPlace++;
+                    }
+                }
+            }
+        }
+        //console.log('rightColors: '+rightColors);
+        //console.log('rightPlace: '+rightPlace);
+    
+    // Выводим на экран подсказку для игрока
+}
+
+//Старт игры: кнопка СТАРТ
+let bstart = document.getElementById('start');
+bstart.addEventListener('click', startGame);
+
+//Конец игры (кнопка Сдаться)
+let bstop = document.getElementById('stop');
+bstop.addEventListener('click', stopGame);

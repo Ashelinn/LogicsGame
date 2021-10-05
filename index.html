@@ -8,7 +8,50 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <canvas id="mycanvas" width="460" height="850"></canvas>
+   
+    <div class="board">
+        <div class="flex-wrap">
+            <div class="wrap-prompt">
+            </div>
+
+            <div class="wrap">
+                <div id="hidden-colors">
+                    <!-- вывод загаданных цветов -->
+                </div>
+                <!-- Линии попыток -->
+                <div id="line-ten" class="line-flex"> </div>
+                <div id="line-nine" class="line-flex"> </div>
+                <div id="line-eight" class="line-flex"> </div>
+                <div id="line-seven" class="line-flex"> </div>
+                <div id="line-six" class="line-flex"> </div>
+                <div id="line-five" class="line-flex"> </div>
+                <div id="line-four" class="line-flex"> </div>
+                <div id="line-three" class="line-flex"> </div>
+                <div id="line-two" class="line-flex"> </div>
+                <div id="line-one" class="line-flex"> </div>
+           </div>
+
+           <div class="button-wrap">
+                <!-- вывод кнопок -->
+                <div id="button-ten"> </div>
+                <div id="button-nine"> </div>
+                <div id="button-eight"> </div>
+                <div id="button-seven"> </div>
+                <div id="button-six"> </div>
+                <div id="button-five"> </div>
+                <div id="button-four"> </div>
+                <div id="button-three"> </div>
+                <div id="button-two"> </div>
+                <div id="button-one"> </div>
+           </div>
+        </div>
+        <div class="line-flex">
+            <button id="start">СТАРТ</button>
+            <button id="stop">СДАТЬСЯ</button>
+        </div>
+    </div>
+    
+
     <script src="js/game.js" type="text/javascript"></script>
 </body>
 </html>
