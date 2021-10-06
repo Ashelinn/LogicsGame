@@ -184,7 +184,7 @@ function Done(num) {
 ------------------------------------------------------------------------------------------------------------ */
 function startGame() {
     //очистить поле для новой игры
-    let allTags = document.querySelectorAll('.red, .orange, .yellow, .green, .blue, .violet, .pink');
+    let allTags = document.querySelectorAll('.red, .orange, .yellow, .green, .blue, .violet, .pink, .gray');
         allTags.forEach(element => {
             element.remove();
         });
