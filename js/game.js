@@ -242,4 +242,20 @@ let bstart = document.getElementById('start');
 bstart.addEventListener('click', startGame);
 
 let bstop = document.getElementById('stop');
-bstop.addEventListener('click', stopGame);
+bstop.addEventListener('click', function() {
+    stopGame();
+    //очищаем поле
+    let allTags = document.querySelectorAll('.red, .orange, .yellow, .green, .blue, .violet, .pink, .gray');
+        allTags.forEach(element => {
+            element.remove();
+        });
+    let allButtons = document.querySelectorAll('#one, #two, #three, #four, #five, #six, #seven, #eight, #nine, #ten');
+        allButtons.forEach(element => {
+            element.remove();
+        });
+
+    let allImages = document.querySelectorAll('#wrap-prompt img');
+    allImages.forEach(element => {
+            element.remove();
+        });
+});
