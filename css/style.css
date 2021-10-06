@@ -1,21 +1,27 @@
+/*--------------------------------
+Стили игрового поля
+---------------------------------- */
 .board {
     width: 550px;
     height: 775px;
     background: url('../img/board.png'), no-repeat;
 }
 
+/*--------------------------------
+Стили контейнеров
+---------------------------------- */
 .wrap {
+    position: relative;
     width: 212px;
     height: 100%;
     margin-left: 32px;
-    position: relative;
 }
 
-.wrap-prompt {
+#wrap-prompt {
+    position: relative;
     width: 130px;
     height: 100%;
     margin-left: 24px;
-    position: relative;
 }
 
 .flex-wrap {
@@ -29,25 +35,55 @@
     width: 100%;
 }
 
-.hidden {
-    display: none;
+#button-wrap{
+    width: 80px;
+    margin-left: 45px;
+    position: relative;
 }
 
-.show {
-    display: block;
+#hidden-colors {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 36px;
 }
 
-/*Стили кнопок*/
+#message {
+    width: 550px;
+    padding: 10px 0px;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: rgb(255, 136, 0);
+}
+
+#message p {
+    margin: 0px;
+}
+
+#message .line-flex {
+    padding: 10px 0px;
+    margin: 10px 0px 0px;
+    background-color: rgb(187, 183, 183);
+}
+
+/*----------------------------------------
+Стили кнопок СТАРт, СДАТЬСЯ, ОТПРАВИТЬ
+------------------------------------------ */
 #start {
     width: 50%;
     height: 60px;
     font-size: 24px;
     font-weight: bold;
-    cursor: pointer;
     background-color: rgb(255, 136, 0);
     border: none;
     outline: none;
+    cursor: pointer;
     transition: background-color 0.5 ease;
+}
+
+#start:hover {
+    background-color: rgb(252, 114, 2);
 }
 
 #stop {
@@ -55,26 +91,15 @@
     height: 60px;
     font-size: 24px;
     font-weight: bold;
-    cursor: pointer;
     background-color: rgb(56, 155, 61);
     border: none;
     outline: none;
+    cursor: pointer;
     transition: background-color 0.5 ease;
 }
 
 #stop:hover {
     background-color: rgb(33, 112, 37);
-}
-
-#start:hover {
-    background-color: rgb(252, 114, 2);
-}
-
-
-.button-wrap{
-    width: 80px;
-    margin-left: 45px;
-    position: relative;
 }
 
 .done {
@@ -83,91 +108,210 @@
     cursor: pointer;
     outline: none;
     border: none;
-    background-color: rgb(127, 202, 5);
+    background-color: rgb(166, 168, 163);
     transition: background-color 0.5 ease;
 }
 
 .done:hover {
-    background-color: rgb(110, 175, 6);
+    background-color: rgb(127, 128, 126);
 }
 
-.gameover {
-    font-weight: bold;
-    cursor: pointer;
-    background-color: rgb(245, 65, 59);
-    transition: background-color 0.5 ease;
-}
-
-.gameover:hover {
-    background-color: rgb(245, 22, 14);
-}
-
-/*Стили для цветных кружков*/
-.red {
+/*----------------------------------------
+Стили цветных кружков
+------------------------------------------ */
+.gray {
     width: 30px;
     height: 30px;
+    background-color: rgb(141, 140, 140);
     border-radius: 50%;
-    background-color: tomato;
     cursor: pointer;
 }
 
-.orange {
+.red, .small_red {
     width: 30px;
     height: 30px;
+    background-color: rgb(252, 88, 59);
     border-radius: 50%;
+    cursor: pointer;
+}
+
+.orange, .small_orange {
+    width: 30px;
+    height: 30px;
     background-color: #FF8C00;
+    border-radius: 50%;
     cursor: pointer;
 }
 
-.blue {
+.blue, .small_blue {
     width: 30px;
     height: 30px;
-    border-radius: 50%;
     background-color: #00BFFF;
+    border-radius: 50%;
     cursor: pointer;
 }
 
-.green {
+.green, .small_green {
     width: 30px;
     height: 30px;
-    border-radius: 50%;
     background-color: #6B8E23;
+    border-radius: 50%;
     cursor: pointer;
 }
 
-.violet {
+.violet, .small_violet {
     width: 30px;
     height: 30px;
-    border-radius: 50%;
     background-color: #7B68EE;
+    border-radius: 50%;
     cursor: pointer;
 }
 
-.pink {
+.pink, .small_pink {
     width: 30px;
     height: 30px;
-    border-radius: 50%;
     background-color: #FF69B4;
+    border-radius: 50%;
     cursor: pointer;
 }
 
-.yellow {
+.yellow, .small_yellow {
     width: 30px;
     height: 30px;
-    border-radius: 50%;
     background-color: #FFD700;
+    border-radius: 50%;
     cursor: pointer;
 }
 
-/*Стили для линий цветов*/
-#hidden-colors {
-    display: flex;
-    justify-content: space-around;
-    padding-top: 36px;
-}
-
+/*----------------------------------------
+Стили для линий попыток
+------------------------------------------ */
+/*---------- 1 ------------*/
 #line-one, #button-one {
     position: absolute;
     left: 0;
     bottom: 64px;
+}
+
+#prompt-one {
+    position: absolute;
+    left: 0;
+    bottom: 70px;
+}
+
+/*---------- 2 ------------*/
+#line-two, #button-two {
+    position: absolute;
+    left: 0;
+    bottom: 124px;
+}
+
+#prompt-two {
+    position: absolute;
+    left: 0;
+    bottom: 130px;
+}
+
+/*---------- 3 ------------*/
+#line-three, #button-three {
+    position: absolute;
+    left: 0;
+    bottom: 184px;
+}
+
+#prompt-three {
+    position: absolute;
+    left: 0;
+    bottom: 190px;
+}
+
+/*---------- 4 ------------*/
+#line-four, #button-four {
+    position: absolute;
+    left: 0;
+    bottom: 244px;
+}
+
+#prompt-four {
+    position: absolute;
+    left: 0;
+    bottom: 250px;
+}
+
+/*---------- 5 ------------*/
+#line-five, #button-five {
+    position: absolute;
+    left: 0;
+    bottom: 304px;
+}
+
+#prompt-five {
+    position: absolute;
+    left: 0;
+    bottom: 310px;
+}
+
+/*---------- 6 ------------*/
+#line-six, #button-six {
+    position: absolute;
+    left: 0;
+    bottom: 364px;
+}
+
+#prompt-six {
+    position: absolute;
+    left: 0;
+    bottom: 370px;
+}
+
+/*---------- 7 ------------*/
+#line-seven, #button-seven {
+    position: absolute;
+    left: 0;
+    bottom: 424px;
+}
+
+#prompt-seven {
+    position: absolute;
+    left: 0;
+    bottom: 430px;
+}
+
+/*---------- 8 ------------*/
+#line-eight, #button-eight {
+    position: absolute;
+    left: 0;
+    bottom: 484px;
+}
+
+#prompt-eight {
+    position: absolute;
+    left: 0;
+    bottom: 490px;
+}
+
+/*---------- 9 ------------*/
+#line-nine, #button-nine {
+    position: absolute;
+    left: 0;
+    bottom: 544px;
+}
+
+#prompt-nine {
+    position: absolute;
+    left: 0;
+    bottom: 552px;
+}
+
+/*---------- 10 ------------*/
+#line-ten, #button-ten {
+    position: absolute;
+    left: 0;
+    bottom: 604px;
+}
+
+#prompt-ten {
+    position: absolute;
+    left: 0;
+    bottom: 614px;
 }

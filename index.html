@@ -8,10 +8,33 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-   
+    <div id="message">
+        <p>Игра логика</p>
+        <div class="line-flex">
+            доступные цвета:  
+            <div class="small_red"></div>
+            <div class="small_orange"></div>
+            <div class="small_yellow"></div>
+            <div class="small_green"></div>
+            <div class="small_blue"></div>
+            <div class="small_violet"></div>
+            <div class="small_pink"></div>
+        </div>
+    </div>
+
     <div class="board">
         <div class="flex-wrap">
-            <div class="wrap-prompt">
+            <div id="wrap-prompt">
+                <div id="prompt-ten" class="line-flex"> </div>
+                <div id="prompt-nine" class="line-flex"> </div>
+                <div id="prompt-eight" class="line-flex"> </div>
+                <div id="prompt-seven" class="line-flex"> </div>
+                <div id="prompt-six" class="line-flex"> </div>
+                <div id="prompt-five" class="line-flex"> </div>
+                <div id="prompt-four" class="line-flex"> </div>
+                <div id="prompt-three" class="line-flex"> </div>
+                <div id="prompt-two" class="line-flex"> </div>
+                <div id="prompt-one" class="line-flex"> </div>
             </div>
 
             <div class="wrap">
@@ -31,7 +54,7 @@
                 <div id="line-one" class="line-flex"> </div>
            </div>
 
-           <div class="button-wrap">
+           <div id="button-wrap">
                 <!-- вывод кнопок -->
                 <div id="button-ten"> </div>
                 <div id="button-nine"> </div>
@@ -50,6 +73,7 @@
             <button id="stop">СДАТЬСЯ</button>
         </div>
     </div>
+    
     
 
     <script src="js/game.js" type="text/javascript"></script>
