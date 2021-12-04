@@ -129,8 +129,11 @@ function Done(num) {
         // Если все цвета угаданы, выводим сообщение о победе
         if(rightPlace == 4) {
             //Вывод сообщения игроку
-            let mess = document.querySelector('#message p');
+            let mess = document.querySelector('.result-message');
             mess.textContent = 'Поздравляем, вы выиграли!';
+            mess.style.display = "block";
+            mess.style.background = "rgb(56, 155, 61)";
+
             let button = document.querySelector(`#button-${num} > button`);
             button.setAttribute("disabled", "disabled");
             stopGame();
@@ -170,14 +173,15 @@ function Done(num) {
         if(tr >= 9) {
             stopGame();
             //Вывод сообщения игроку
-            let mess = document.querySelector('#message p');
+            let mess = document.querySelector('.result-message');
             mess.textContent = 'К сожалению, вы проиграли';
+            mess.style.display = "block";
+            mess.style.background = "rgb(252, 114, 2)";
             return false;
         }
 
     //Создаем новую линию
         newLine(num);
-
         return true;
 };
 
@@ -201,6 +205,9 @@ function startGame() {
             element.remove();
         });
 
+    let mess = document.querySelector('.result-message');
+    mess.style.display = "none";
+
     //скрыть кнопку старт
     document.getElementById('start').setAttribute("disabled", "disabled");
 
@@ -209,8 +216,8 @@ function startGame() {
         colors: createColor()
     };
 
-    //Выводим на первую линию произвольные цвета
-    let line = createColor();
+    //Выводим первую линию 
+    let line = createBlank();
     //console.log('zagadano: '+hidden.colors);
     let tag = document.getElementById('line-one');
 
@@ -247,18 +254,4 @@ bstart.addEventListener('click', startGame);
 let bstop = document.getElementById('stop');
 bstop.addEventListener('click', function() {
     stopGame();
-    //очищаем поле
-    let allTags = document.querySelectorAll('.red, .orange, .yellow, .green, .blue, .violet, .pink, .gray');
-        allTags.forEach(element => {
-            element.remove();
-        });
-    let allButtons = document.querySelectorAll('#one, #two, #three, #four, #five, #six, #seven, #eight, #nine, #ten');
-        allButtons.forEach(element => {
-            element.remove();
-        });
-
-    let allImages = document.querySelectorAll('#wrap-prompt img');
-    allImages.forEach(element => {
-            element.remove();
-        });
 });
