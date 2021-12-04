@@ -315,3 +315,16 @@
     left: 0;
     bottom: 614px;
 }
+
+/*Вывод сообщений о проигрыше / выигрыше*/
+.result-message {
+    display: none;
+    position: fixed;
+    top: 400px;
+    z-index: 500;
+    padding: 40px 80px;
+    margin: auto;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+}
