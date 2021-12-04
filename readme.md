@@ -19,7 +19,7 @@ The player can surrender. In this case, the hidden sequence is displayed on the 
 ## Дизайн
 Дизайн разработан на основе настольной игры "Логика". Ссылка на игру: [https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.modi.ru%2Fcatalog%2Fgoods%2Fnastolnaya_igra_master_logiki%2F&psig=AOvVaw0VobBk9o0Tu_TgscE_dpcv&ust=1638736312194000&source=images&cd=vfe&ved=0CAgQjRxqFwoTCMCXj87-yvQCFQAAAAAdAAAAABAK] [a]
 ## Design
-The design is based on the board game "Logic". Link to the game: [https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.modi.ru%2Fcatalog%2Fgoods%2Fnastolnaya_igra_master_logiki%2F&psig=AOvVaw0VobBk9o0Tu_TgscE_dpcv&ust=1638736312194000&source=images&cd=vfe&ved=0CAgQjRxqFwoTCMCXj87-yvQCFQAAAAAdAAAAABAK] [a]
+The design is based on the board game "Logic". Link to the game: https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.modi.ru%2Fcatalog%2Fgoods%2Fnastolnaya_igra_master_logiki%2F&psig=AOvVaw0VobBk9o0Tu_TgscE_dpcv&ust=1638736312194000&source=images&cd=vfe&ved=0CAgQjRxqFwoTCMCXj87-yvQCFQAAAAAdAAAAABAK
 ## Особенности реализации
 Игра полностью основана на работе со стилями блоков. Например, при смене цветов меняется стиль блока, по которому кликаем. В стилях прописаны только различные цвета для свойства background. Сама логика игры простая - в двойном цикле подсчитывается количество совпавших цветов.
 
