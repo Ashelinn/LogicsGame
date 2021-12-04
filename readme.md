@@ -25,3 +25,9 @@ The design is based on the board game "Logic". Link to the game: https://www.goo
 
 ## Implementation features
 The game is completely based on working with block styles. For example, when changing colors, the style of the block we click on changes. Styles only have different colors for the background property. The very logic of the game is simple - the number of matching colors is counted in a double loop.
+
+##
+Вы можете просматривать игру прямо сейчас в режиме реального времени через Github Pages: https://ashelinn.github.io/LogicsGame/
+
+## Github Pages
+You can view the game right now in real time via Github Pages: https://ashelinn.github.io/LogicsGame/
