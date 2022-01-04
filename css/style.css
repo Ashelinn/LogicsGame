@@ -4,7 +4,7 @@
 .board {
     width: 550px;
     height: 775px;
-    background: url('../img/board.png'), no-repeat;
+    background: url('../img/board.jpg'), no-repeat;
 }
 
 /*--------------------------------
@@ -49,12 +49,10 @@
 
 #message {
     width: 550px;
-    padding: 10px 0px;
     box-sizing: border-box;
     text-align: center;
-    font-size: 24px;
+    font-size: 18px;
     font-weight: bold;
-    background-color: rgb(255, 136, 0);
 }
 
 #message p {
@@ -63,44 +61,41 @@
 
 #message .line-flex {
     padding: 10px 0px;
-    margin: 10px 0px 0px;
-    background-color: rgb(187, 183, 183);
+    background-color: #a2bfc5;
 }
 
+.fon {
+    box-sizing: border-box;
+    padding: 20px;
+    background-color: #28231c;
+}
 /*----------------------------------------
 Стили кнопок СТАРт, СДАТЬСЯ, ОТПРАВИТЬ
 ------------------------------------------ */
-#start {
+#start, #stop {
+    margin-right: 10px;
     width: 50%;
-    height: 60px;
-    font-size: 24px;
+    height: 50px;
+    font-size: 18px;
     font-weight: bold;
-    background-color: rgb(255, 136, 0);
-    border: none;
+    background-color: #28231c;
+    color: #a2bfc5;
+    border: 3px solid #a2bfc5;
     outline: none;
     cursor: pointer;
-    transition: background-color 0.5 ease;
+    transition: all 0.8 ease;
 }
 
-#start:hover {
-    background-color: rgb(252, 114, 2);
+#start:hover, #stop:hover  {
+    border-color: #b7a78e;
+    color: #b7a78e;
 }
 
 #stop {
-    width: 50%;
-    height: 60px;
-    font-size: 24px;
-    font-weight: bold;
-    background-color: rgb(56, 155, 61);
-    border: none;
-    outline: none;
-    cursor: pointer;
-    transition: background-color 0.5 ease;
+    margin-left: 10px;
+    margin-right: 0px;
 }
 
-#stop:hover {
-    background-color: rgb(33, 112, 37);
-}
 
 .done {
     padding: 8px;
@@ -108,12 +103,15 @@
     cursor: pointer;
     outline: none;
     border: none;
-    background-color: rgb(166, 168, 163);
+    color: #28231c;
+    border-radius: 4px;
+    background-color: #a2bfc5;
     transition: background-color 0.5 ease;
 }
 
 .done:hover {
-    background-color: rgb(127, 128, 126);
+    background-color: #28231c;
+    color: #a2bfc5;
 }
 
 /*----------------------------------------
@@ -127,7 +125,7 @@
     cursor: pointer;
 }
 
-.red, .small_red {
+.red, .small_red{
     width: 30px;
     height: 30px;
     background-color: rgb(252, 88, 59);
@@ -181,6 +179,11 @@
     background-color: #FFD700;
     border-radius: 50%;
     cursor: pointer;
+}
+
+.small {
+    width: 20px;
+    height: 20px;
 }
 
 /*----------------------------------------
@@ -322,7 +325,7 @@
     position: fixed;
     top: 400px;
     z-index: 500;
-    padding: 40px 80px;
+    padding: 100px 80px;
     margin: auto;
     font-size: 30px;
     font-weight: bold;
