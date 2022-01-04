@@ -43,8 +43,9 @@ function stopGame() {
     //делаем активной кнопку старт
     document.getElementById('start').removeAttribute("disabled");
 
-    let mess = document.querySelector('#message p');
-        mess.textContent = 'Игра Логика';
+    //Блокируем кнопку Сдаться
+    document.getElementById('stop').setAttribute("disabled","disabled");
+    console.log(document.getElementById('stop'));
 };
 
 /* -------------------------------------------------------------
@@ -132,7 +133,7 @@ function Done(num) {
             let mess = document.querySelector('.result-message');
             mess.textContent = 'Поздравляем, вы выиграли!';
             mess.style.display = "block";
-            mess.style.background = "rgb(56, 155, 61)";
+            mess.style.background = "rgba(162, 191, 197, 0.8)";
 
             let button = document.querySelector(`#button-${num} > button`);
             button.setAttribute("disabled", "disabled");
@@ -176,7 +177,7 @@ function Done(num) {
             let mess = document.querySelector('.result-message');
             mess.textContent = 'К сожалению, вы проиграли';
             mess.style.display = "block";
-            mess.style.background = "rgb(252, 114, 2)";
+            mess.style.background = "rgba(162, 191, 197, 0.8)";
             return false;
         }
 
