@@ -31,3 +31,5 @@ The game is completely based on working with block styles. For example, when cha
 
 ## Github Pages
 You can view the game right now in real time via Github Pages: https://ashelinn.github.io/LogicsGame/
+
+Последние изменения: изменено визуальное оформление (стили)
