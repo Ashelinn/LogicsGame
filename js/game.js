@@ -42,6 +42,7 @@ function stopGame() {
     
     //делаем активной кнопку старт
     document.getElementById('start').removeAttribute("disabled");
+    document.getElementById('stop').removeAttribute("disabled");
 
     let mess = document.querySelector('#message p');
         mess.textContent = 'Игра Логика';
