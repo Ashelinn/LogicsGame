@@ -210,6 +210,7 @@ function startGame() {
 
     //скрыть кнопку старт
     document.getElementById('start').setAttribute("disabled", "disabled");
+    document.getElementById('stop').removeAttribute("disabled");
 
     //Генерируем последовательность цветов            
     window.hidden = {
